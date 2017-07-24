@@ -41,8 +41,8 @@ function PizzaList({ pizzaSizes, handleModalOpen }) {
             key={pizzaSize.name}
             onClick={() => handleModalOpen(pizzaSize)}
           >
-            <PizzaName>{pizzaSize.name}</PizzaName>
-            <div>{`$${pizzaSize.basePrice.toFixed(2)}+`}</div>
+            <PizzaName>{`${pizzaSize.name} pie`}</PizzaName>
+            <div>{`$${Number(pizzaSize.basePrice).toFixed(2)}+`}</div>
           </PizzaItem>
         ))
       }

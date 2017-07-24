@@ -9,6 +9,7 @@ import { initializeState } from '../actions/FormActions';
 import AddPizzaForm from '../containers/AddPizzaForm';
 import PizzaList from '../components/PizzaList';
 import CartPreview from '../components/CartPreview';
+import Loading from '../components/Loading';
 
 PizzaMenu.propTypes = {
   isModalOpen: PropTypes.bool,
@@ -35,7 +36,7 @@ function PizzaMenu({
   cart
 }) {
   if (loading) {
-    return (<div>Loading</div>)
+    return <Loading />;
   }
 
   if (error) {

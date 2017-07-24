@@ -9,6 +9,7 @@ import AddPizzaFormBody from '../components/AddPizzaFormBody';
 import { toggleTopping } from '../actions/FormActions';
 import { addItem } from '../actions/CartActions';
 import CloseIcon from '../static/close.png';
+import Loading from '../components/Loading';
 
 const Close = styled.img`
   position: absolute;
@@ -19,6 +20,7 @@ const Close = styled.img`
   &:hover {
     opacity: 0.5;
   }
+  z-index: 10;
 `;
 
 function AddPizzaForm({ isModalOpen, closeModal, loading, error, data, formData, handleToppingClick, handleAddButtonClick }) {
@@ -27,7 +29,7 @@ function AddPizzaForm({ isModalOpen, closeModal, loading, error, data, formData,
   }
 
   if (loading) {
-    return (<div>Loading</div>)
+    return <Loading />
   }
 
   if (error) {

@@ -11,6 +11,7 @@ import FormReducer from './reducers/FormReducer';
 
 import PizzaMenu from './containers/PizzaMenu';
 import Cart from './containers/Cart';
+import PageNotFound from './components/PageNotFound';
 
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({ uri: 'https://core-graphql.dev.waldo.photos/pizza'})
@@ -33,6 +34,7 @@ ReactDOM.render((
       <Switch>
         <Route exact path="/" component={PizzaMenu} />
         <Route path="/cart" component={Cart} />
+        <Route component={PageNotFound} />
       </Switch>
     </BrowserRouter>
   </ApolloProvider>

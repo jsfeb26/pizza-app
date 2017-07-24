@@ -46,7 +46,7 @@ function CartPreview({ items, total }) {
         <Cart>
           <Header>cart</Header>
           <CartInfo>{`${items.length} items`}</CartInfo>
-          <CartInfo>{`total: $${total.toFixed(2)}`}</CartInfo>
+          <CartInfo>{`total: $${Number(total).toFixed(2)}`}</CartInfo>
         </Cart>
       </Link>
     </PreviewContainer>

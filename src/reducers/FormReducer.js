@@ -15,10 +15,10 @@ export default function(state = defaultState, action) {
       const defaultToppings = pizza.toppings
         .filter((t) => t.defaultSelected)
         .map((t) => t.topping);
+
       const price = defaultToppings.reduce((total, topping) => {
          return total + topping.price;
       }, pizza.basePrice);
-      const selectedToppingsCount = defaultToppings.length;
 
       const selectedToppings = {};
       defaultToppings.forEach((topping) => {
@@ -30,7 +30,7 @@ export default function(state = defaultState, action) {
         name: pizza.name,
         selectedToppings,
         price,
-        selectedToppingsCount
+        selectedToppingsCount: defaultToppings.length
       };
     case TOGGLE_TOPPING:
       const topping = action.payload;

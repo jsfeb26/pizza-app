@@ -6,6 +6,7 @@ const Button = styled.button`
   width: 300px;
   height: 50px;
   cursor: pointer;
+  font-size: 18px;
 `;
 
 AddItemButton.propTypes = {

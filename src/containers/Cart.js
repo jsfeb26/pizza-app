@@ -13,10 +13,16 @@ const CartContainer = styled.div`
   justify-content: center;
 `;
 
+const Title = styled.h1`
+  text-align: center;
+  text-transform: capitalize;
+`;
+
 const MenuButton = styled.button`
   cursor: pointer;
-  width: 200px;
+  width: 150px;
   height: 40px;
+  font-size: 14px;
 `;
 
 const Total = styled.div`
@@ -38,6 +44,7 @@ function Cart({ items, total, handleRemoveClick }) {
       <Link to="/">
         <MenuButton>Back To Menu</MenuButton>
       </Link>
+      <Title>your cart</Title>
       <CartItemContainer items={items} handleRemoveClick={handleRemoveClick} />
       <Total>{`Total Price: $${total.toFixed(2)}`}</Total>
     </CartContainer>

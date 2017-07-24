@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 import { openModal, closeModal } from '../actions/MenuActions';
 import { initializeState } from '../actions/FormActions';
@@ -10,6 +11,11 @@ import AddPizzaForm from '../containers/AddPizzaForm';
 import PizzaList from '../components/PizzaList';
 import CartPreview from '../components/CartPreview';
 import Loading from '../components/Loading';
+
+const Title = styled.h1`
+  text-align: center;
+  text-transform: capitalize;
+`;
 
 PizzaMenu.propTypes = {
   isModalOpen: PropTypes.bool,
@@ -47,6 +53,7 @@ function PizzaMenu({
   return (
     <div>
       <CartPreview {...cart} />
+      <Title>pizza menu</Title>
       <PizzaList handleModalOpen={handleModalOpen} pizzaSizes={pizzaSizes} />
       <AddPizzaForm
         isModalOpen={isModalOpen}
